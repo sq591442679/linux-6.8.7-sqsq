@@ -339,11 +339,11 @@ static __net_init int setup_net(struct net *net, struct user_namespace *user_ns)
 	 * @sqsq 
 	 * init lofi_delta and last_time_qlen
 	 * */
-	net->satellite_id = 0x7f7f7f7f;
-	net->satellite_id_sock = NULL;
-	net->qlen_amplitude_threshold = 0x3f3f3f3f;
-	net->recv_packet_nl_sock = NULL;
-	memset(net->last_time_qlen, 0, sizeof(net->last_time_qlen));
+	// net->satellite_id = 0x7f7f7f7f;
+	// net->satellite_id_sock = NULL;
+	// net->qlen_amplitude_threshold = 0x3f3f3f3f;
+	// net->recv_packet_nl_sock = NULL;
+	// memset(net->last_time_qlen, 0, sizeof(net->last_time_qlen));
 
 	list_for_each_entry(ops, &pernet_list, list) {
 		error = ops_init(ops, net);
