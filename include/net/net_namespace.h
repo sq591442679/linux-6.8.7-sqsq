@@ -135,6 +135,7 @@ struct net {
 	struct sock	*recv_packet_nl_sock;
 	__u32		qlen_amplitude_threshold;
 	__u32 		last_time_qlen[4];	
+	u32			load_awareness_port_id;
 
 	/* core fib_rules */
 	struct list_head	rules_ops;
