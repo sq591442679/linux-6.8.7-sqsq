@@ -125,7 +125,7 @@ struct net {
 	 * @sqsq
 	 * added members for storing satellite id
 	 */
-	u32			satellite_id;
+	__u32			satellite_id;
 	struct sock	*satellite_id_sock;
 	
 	/** 
@@ -135,7 +135,16 @@ struct net {
 	struct sock	*recv_packet_nl_sock;
 	__u32		qlen_amplitude_threshold;
 	__u32 		last_time_qlen[4];	
-	u32			load_awareness_port_id;
+	__u32		load_awareness_port_id;
+
+	/**
+	 * @sqsq
+	 * added member variables for ELB
+	 * TODO: use link-list instead
+	 */
+	__u32		elb_port_id;
+	struct list_head ipv4_uint_list;
+	spinlock_t ipv4_uint_list_lock;
 
 	/* core fib_rules */
 	struct list_head	rules_ops;
